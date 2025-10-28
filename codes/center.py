@@ -8,6 +8,13 @@ class Center:
         self.y = y
         
 
+    def __repr__(self):
+        return f"Center(x={self.x}, y={self.y})"
+    
+    def __str__(self):
+        return f"({self.x},{self.y}) represents the centerposition"
+
+
     @property
     def x(self) -> None: 
         return self._x 
@@ -35,7 +42,8 @@ class Center:
 
     def __eq__(self, other) -> bool: 
         if same_shape(self, other):
-            return True
+            if self.area == other.area:
+                return True
         else:
             return False
 

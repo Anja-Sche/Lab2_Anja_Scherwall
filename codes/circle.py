@@ -10,6 +10,12 @@ class Circle(Center):
         self._area = 0
         self._parimeter = 0
 
+    def __repr__(self):
+        return f"Circle(x={self._x}, y={self._y}, radius={self.radius})"
+    
+    def __str__(self):
+        return f"({self._x},{self._y}) represents the centerposition. he circles radius is {self.radius}"
+
 
     @property
     def radius(self) -> int:

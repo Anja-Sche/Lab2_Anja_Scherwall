@@ -11,6 +11,13 @@ class Rectangle(Center):
         self._area = 0
         self._parimeter = 0
 
+    def __repr__(self):
+        return f"Rectangle(x={self._x}, y={self._y}, width={self._width}, height={self._height})"
+    
+    def __str__(self):
+        return f"({self.x},{self.y}) represents the centerposition. The rectangles width is {self.width}, the hight is {self.height}"
+
+
     @property
     def width(self) -> int:
         return self._width

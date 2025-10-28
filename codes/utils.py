@@ -1,7 +1,6 @@
 def same_shape(self, other):
     if type(self) == type(other):
-        if self.area == other.area:
-            return True
+        return True
     else:
         return False
     
