@@ -1,4 +1,6 @@
 from center import Center
+from utils import validate_type_number
+from utils import validation_positive_number
 
 class Circle(Center):
     def __init__(self, x= 0, y= 0, radius = 0) -> None: #place radius first for no default value??
@@ -8,6 +10,18 @@ class Circle(Center):
         self._area = 0
         self._parimeter = 0
 
+
+    @property
+    def radius(self) -> int:
+        return self._radius
+    
+    @radius.setter
+    def radius(self, value: int) -> None:
+        validate_type_number(value)
+        validation_positive_number(value)
+
+        self._radius = value
+    
     @property
     def area(self) -> float:
         area = (self.radius*self.radius)*3.14

@@ -1,4 +1,6 @@
 from center import Center
+from utils import validate_type_number
+from utils import validation_positive_number
 
 class Rectangle(Center):
     def __init__(self, x: int, y: int, width: int, height: int) -> None:
@@ -8,6 +10,28 @@ class Rectangle(Center):
 
         self._area = 0
         self._parimeter = 0
+
+    @property
+    def width(self) -> int:
+        return self._width
+    
+    @width.setter
+    def width(self, value: int) -> None:
+        validate_type_number(value)
+        validation_positive_number(value)
+
+        self._width = value
+
+    @property
+    def height(self) -> int:
+        return self._height
+    
+    @height.setter
+    def height(self, value: int) -> None:
+        validate_type_number(value)
+        validation_positive_number(value)
+
+        self._height = value
 
     @property
     def area(self) -> float:
