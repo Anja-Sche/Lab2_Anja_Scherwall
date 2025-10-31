@@ -1,15 +1,11 @@
 from center import Center
-from utils import validate_type_number
-from utils import validation_positive_number
+import utils
 
 class Rectangle(Center):
     def __init__(self, x: int, y: int, width: int, height: int) -> None:
         super().__init__(x, y)
         self.width = width
         self.height = height
-
-        self._area = 0
-        self._parimeter = 0
 
     def __repr__(self):
         return f"Rectangle(x={self._x}, y={self._y}, width={self._width}, height={self._height})"
@@ -24,8 +20,8 @@ class Rectangle(Center):
     
     @width.setter
     def width(self, value: int) -> None:
-        validate_type_number(value)
-        validation_positive_number(value)
+        utils.validate_type_number(value)
+        utils.validation_positive_number(value)
 
         self._width = value
 
@@ -35,22 +31,18 @@ class Rectangle(Center):
     
     @height.setter
     def height(self, value: int) -> None:
-        validate_type_number(value)
-        validation_positive_number(value)
+        utils.validate_type_number(value)
+        utils.validation_positive_number(value)
 
         self._height = value
 
     @property
     def area(self) -> float:
-        area = self.width*self.height
-        self._area = area
-        return self._area
+        return self.width*self.height
     
     @property
     def perimeter(self) -> float:
-        perimeter = (self.width*2)+(self.height*2)
-        self._perimeter = perimeter
-        return self._perimeter 
+        return (self.width*2)+(self.height*2)
     
     def square(self) -> bool:
         if self.width == self.height:

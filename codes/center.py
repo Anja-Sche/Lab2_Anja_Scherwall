@@ -1,6 +1,4 @@
-from utils import same_shape
-from utils import validate_different_type
-from utils import validate_type_number
+import utils  
 
 class Center:
     def __init__(self, x: int, y: int) -> None:
@@ -21,7 +19,7 @@ class Center:
     
     @x.setter
     def x(self, value: int) -> int:
-        validate_type_number(value)
+        utils.validate_type_number(value)
         self._x = value
 
     @property
@@ -30,26 +28,27 @@ class Center:
     
     @y.setter
     def y(self, value: int) -> int:
-        validate_type_number(value)
+        utils.validate_type_number(value)
         self._y = value
 
         
-    def translate(self, a: int, b: int) -> int:
-        self._x = a
-        self._y = b
+    def translate(self, x: int, y: int) -> int:
+        self._x = self._x + x
+        self._y = self._y + y
         return self._x, self._y
+        #???????
     
 
     def __eq__(self, other) -> bool: 
-        if same_shape(self, other):
-            if self.area == other.area:
-                return True
+        if utils.same_shape(self, other):
+            if not self.area == other.area and self.perimeter == other.perimeter:
+                return False
         else:
-            return False
+            return True
 
 
     def __lt__(self, other) -> bool:
-        validate_different_type(self, other)
+        utils.validate_different_type(self, other)
                 
         if self.area < other.area:
             return True
@@ -58,7 +57,7 @@ class Center:
 
 
     def __le__(self, other) -> bool:
-        validate_different_type(self, other) 
+        utils.validate_different_type(self, other) 
         
         if self.area <= other.area:
             return True
@@ -67,7 +66,7 @@ class Center:
 
 
     def __gt__(self, other) -> bool:
-        validate_different_type(self, other) 
+        utils.validate_different_type(self, other) 
         
         if self.area > other.area:
             return True
@@ -76,7 +75,7 @@ class Center:
 
 
     def __ge__(self, other) -> bool:
-        validate_different_type(self, other) 
+        utils.validate_different_type(self, other) 
         
         if self.area >= other.area:
             return True

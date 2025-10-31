@@ -1,3 +1,5 @@
+from numbers import Number
+
 def same_shape(self, other):
     if type(self) == type(other):
         return True
@@ -11,8 +13,10 @@ def validate_different_type(self, other):
     
 
 def validate_type_number(value):
-    if not isinstance(value, int):
-        raise TypeError(f"Value must contain digits, not {type(value)}")
+    if isinstance(value, bool):
+        raise TypeError(f"Value must be a number, not {type(value)}")
+    if not isinstance(value, Number):
+        raise TypeError(f"Value must be a number, not {repr(type(value))}")
     
 
 def validation_positive_number(value):
