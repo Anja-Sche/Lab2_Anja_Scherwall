@@ -35,7 +35,7 @@ class Circle(Center):
     
     @property
     def perimeter(self) -> float:
-        return (self.radius + self.radius)*np.pi
+        return (self.radius*np.pi)*2
     #fix float?
 
     def unit_circle(self) -> bool:

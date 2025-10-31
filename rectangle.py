@@ -13,7 +13,6 @@ class Rectangle(Center):
     def __str__(self):
         return f"({self.x},{self.y}) represents the centerposition. The rectangles width is {self.width}, the hight is {self.height}"
 
-
     @property
     def width(self) -> int:
         return self._width
