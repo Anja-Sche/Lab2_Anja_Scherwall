@@ -2,7 +2,7 @@ from center import Center
 import utils
 
 class Rectangle(Center):
-    def __init__(self, x: int, y: int, width: int, height: int) -> None:
+    def __init__(self, x=0, y=0, width=0, height=0) -> None:
         super().__init__(x, y)
         self.width = width
         self.height = height

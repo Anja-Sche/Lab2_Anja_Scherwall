@@ -39,12 +39,11 @@ class Center:
         #???????
     
 
-    def __eq__(self, other) -> bool: 
-        if utils.same_shape(self, other):
-            if not self.area == other.area and self.perimeter == other.perimeter:
-                return False
-        else:
+    def __eq__(self, other) -> bool:         
+        if utils.same_shape(self, other) and self.area == other.area and self.perimeter == other.perimeter:
             return True
+        else:
+            return False
 
 
     def __lt__(self, other) -> bool:
