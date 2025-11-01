@@ -5,7 +5,7 @@ def test_valid_init():
     s = Sphere(1,1,3)
     assert s.x == 1 and s.y == 1 and s.radius == 3
 
-def test_negative_placement():
+def test_negative_placement_valid():
     s = Sphere(1,-2,3)
     assert s.x == 1 and s.y == -2 and s.radius == 3
 
@@ -36,8 +36,8 @@ def test_area_valid():
 
 def test_dunder_repr():
     s = Sphere(1,1,4)
-    assert s == Sphere(x=1, y=1, radius=4)
+    assert repr(s) == "Sphere(x=1, y=1, radius=4)"
 
 def test_dunder_str():
     s = Sphere(2,4,1)
-    assert print(s) == print("(2, 4) represents the centerposition. The circles radius is 1")
+    assert str(s) == "(2, 4) represents the centerposition. The spheres radius is 1"

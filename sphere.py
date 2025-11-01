@@ -21,4 +21,4 @@ class Sphere(Circle):
         return f"Sphere(x={self.x}, y={self.y}, radius={self.radius})"
     
     def __str__(self):
-        return f"({self._x},{self._y}) represents the centerposition. The circles radius is {self.radius}"
+        return f"({self._x}, {self._y}) represents the centerposition. The spheres radius is {self.radius}"
