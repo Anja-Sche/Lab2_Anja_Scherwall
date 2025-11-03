@@ -11,7 +11,7 @@ class Rectangle(Center):
         return f"Rectangle(x={self._x}, y={self._y}, width={self._width}, height={self._height})"
     
     def __str__(self):
-        return f"({self.x},{self.y}) represents the centerposition. The rectangles width is {self.width}, the hight is {self.height}"
+        return f"{self.center} represents the centerposition. The rectangles width is {self.width}, the hight is {self.height}"
 
     @property
     def width(self) -> int:
@@ -48,3 +48,8 @@ class Rectangle(Center):
             return True
         else:
             print("This is a rectangle, not a square")
+
+    def left_corner_position(self):
+        x_position = self._x - (self._width/2)
+        y_position = self._y - (self._height/2)
+        return (x_position, y_position)

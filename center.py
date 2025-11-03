@@ -1,21 +1,15 @@
 import utils  
 
 class Center:
-    def __init__(self, x: int, y: int) -> None:
+    def __init__(self, x, y) -> None:
         self.x = x
         self.y = y
-        
-        
 
-    def __repr__(self):
-        return f"Center(x={self.x}, y={self.y})"
+        self.center = (self.x, self.y)
+
     
-    def __str__(self):
-        return f"({self.x},{self.y}) represents the centerposition"
-
-
     @property
-    def x(self) -> None: 
+    def x(self) -> None:         
         return self._x 
     
     @x.setter
@@ -29,15 +23,24 @@ class Center:
     
     @y.setter
     def y(self, value: int) -> int:
-        utils.validate_type_number(value)
+        utils.validate_type_number(value)        
         self._y = value
+
+    @property
+    def center(self):        
+        return self._center
+    
+    @center.setter
+    def center(self, value):        
+        self._center = (self._x, self._y)
 
         
     def translate(self, x: int, y: int) -> int:
         self._x = self._x + x
         self._y = self._y + y
-        return self._x, self._y
-        #???????
+        self.center = (self._x, self._y)
+        return self.center
+        
     
 
     def __eq__(self, other) -> bool:         

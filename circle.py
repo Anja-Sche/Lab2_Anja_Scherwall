@@ -1,6 +1,8 @@
 from center import Center
 import numpy as np
 import utils
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
 
 class Circle(Center):
     def __init__(self, x= 0, y= 0, radius = 0) -> None: #place radius first for no default value??
@@ -14,7 +16,7 @@ class Circle(Center):
         return f"Circle(x={self._x}, y={self._y}, radius={self.radius})"
     
     def __str__(self):
-        return f"({self._x},{self._y}) represents the centerposition. The circles radius is {self.radius}"
+        return f"{self.center} represents the centerposition. The circles radius is {self.radius}"
 
 
     @property
@@ -39,7 +41,10 @@ class Circle(Center):
     #fix float?
 
     def unit_circle(self) -> bool:
-        if self.x == 0 and self.y == 0 and self.radius == 1:
+        if self.center == (0, 0) and self._radius == 1:
             return True
         else:
             return False
+        
+
+    

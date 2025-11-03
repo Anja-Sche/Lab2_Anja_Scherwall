@@ -41,3 +41,4 @@ def test_dunder_repr():
 def test_dunder_str():
     c = Cube(3,4,1)
     assert str(c) == "(3, 4) represents the centerposition. The cubes sides are 1"
+    # help from LLM how to test __repr__ and __str__
