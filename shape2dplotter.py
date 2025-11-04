@@ -41,19 +41,30 @@ class Shape2dPlotter:
 
             if isinstance(shape, Circle):
                 circ = patches.Circle(shape._center, shape._radius, color= col)
-                list_of_shapes.append(circ)              
+                list_of_shapes.append(circ)         
                 
             elif isinstance(shape, Rectangle):
                 rect = patches.Rectangle(shape._left_corner_position(), shape._width, shape._height, color= col)
-                list_of_shapes.append(rect)
+                list_of_shapes.append(rect)  
+            else:
+                return "You can only plot circles and rectangles"
 
         fig, ax = plt.subplots()
-        plt.axis("equal")
+        plt.axis("equal")       
+        
+        ax.set(title="Shapes", xlim=(-8, 10))
+        ax.set_xlabel(xlabel="x",loc="left") 
+        ax.set_ylabel(ylabel="y",loc="top")
+        ax.grid()
+
+        # these four lines were help from Rikard
+        ax.spines["left"].set_position("zero")
+        ax.spines["right"].set_visible(False)
+        ax.spines["bottom"].set_position("zero")
+        ax.spines["top"].set_visible(False)
+
         for shape in list_of_shapes:
             ax.add_patch(shape)
-        
-        ax.set(xlabel="x", ylabel="y", title="Shapes", xlim=(-8, 10)) 
-        ax.grid()
 
         plt.show()
       
@@ -61,4 +72,5 @@ class Shape2dPlotter:
         return f"Shape2dPlotter{self._shapes}"
     
     def __str__(self) ->str:
-        return f"These shapes will be shown: {self._shapes}"
+        return f"These type of shapes will be shown: {tuple(shape.__class__.__name__ for shape in self._shapes)}"
+    

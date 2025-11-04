@@ -22,7 +22,7 @@ class Sphere(Circle):
     12.5664
     """
 
-    def __init__(self, x: 0, y: 0, radius: 0) -> None:
+    def __init__(self, radius: int|float, x= 0, y= 0) -> None:
         """
         Initializes an new instance of the class Sphere.
 
@@ -31,7 +31,7 @@ class Sphere(Circle):
         - y (int): The coordinate on the y axel.
         - radius (int): The radius of the sphere.
         """
-        super().__init__(x, y, radius)
+        super().__init__(radius, x, y)
 
     @property    
     def volume(self) -> float:

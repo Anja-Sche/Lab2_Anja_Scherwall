@@ -24,7 +24,7 @@ class Circle(Center):
     Circle(x=3, y=4, radius=1)
     """
 
-    def __init__(self, x= 0, y= 0, radius = 0) -> None:
+    def __init__(self, radius: int|float, x= 0, y= 0) -> None:
         """
         Initializes an new instance of the class Circle.
 
@@ -37,11 +37,11 @@ class Circle(Center):
         self.radius = radius
 
     @property
-    def radius(self) -> int:
+    def radius(self) -> int|float:
         return self._radius
     
     @radius.setter
-    def radius(self, value: int) -> None:
+    def radius(self, value: int|float) -> None:
         utils.validate_type_number(value)
         utils.validation_positive_number(value)
 
@@ -49,11 +49,11 @@ class Circle(Center):
     
     @property
     def area(self) -> float:
-        return (self.radius*self.radius)*np.pi
+        return round((self.radius*self.radius)*np.pi,4)
     
     @property
     def perimeter(self) -> float:
-        return (self.radius*np.pi)*2
+        return round((self.radius*np.pi)*2,4)
 
     def unit_circle(self) -> bool:
         """Checks if the circle is a unit circle"""

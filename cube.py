@@ -20,7 +20,7 @@ class Cube(Center):
     (4, 2) represents the centerposition. The cubes sides are 3.
     """
 
-    def __init__(self, x=0, y=0, side=0) -> None:
+    def __init__(self, side: int|float, x=0, y=0) -> None:
         """
         Initializes an new instance of the class Cube.
 
@@ -33,11 +33,11 @@ class Cube(Center):
         self.side = side
 
     @property
-    def side(self) -> int:
+    def side(self) -> int|float:
         return self._side
     
     @side.setter
-    def side(self, value: int) -> None:
+    def side(self, value: int|float) -> None:
         utils.validate_type_number(value)
         utils.validation_positive_number(value)
 
@@ -45,15 +45,15 @@ class Cube(Center):
 
     @property
     def volume(self) -> float:
-        return self._side * self._side * self._side
+        return round(self._side * self._side * self._side,4)
     
     @property
     def perimeter(self) -> float:
-        return self._side * 12
+        return round(self._side * 12,4)
     
     @property 
     def area(self) -> float:
-        return (self._side * self._side) * 6
+        return round((self._side * self._side) * 6,4)
     
     def __repr__(self) ->str:
         return f"Cube(x={self._x}, y={self._y}, side={self._side})"

@@ -24,7 +24,7 @@ class Rectangle(Center):
     Rectangle(x=1, y=4, width=3, height=1)
     """
 
-    def __init__(self, x=0, y=0, width=0, height=0) -> None:
+    def __init__(self, width: int|float, height: int|float, x=0, y=0) -> None:
         """
         Initializes an new instance of the class Rectangle.
 
@@ -39,22 +39,22 @@ class Rectangle(Center):
         self.height = height
 
     @property
-    def width(self) -> int:
+    def width(self) -> int|float:
         return self._width
     
     @width.setter
-    def width(self, value: int) -> None:
+    def width(self, value: int|float) -> None:
         utils.validate_type_number(value)
         utils.validation_positive_number(value)
 
         self._width = value
 
     @property
-    def height(self) -> int:
+    def height(self) -> int|float:
         return self._height
     
     @height.setter
-    def height(self, value: int) -> None:
+    def height(self, value: int|float) -> None:
         utils.validate_type_number(value)
         utils.validation_positive_number(value)
 
@@ -62,11 +62,11 @@ class Rectangle(Center):
 
     @property
     def area(self) -> float:
-        return self.width*self.height
+        return round(self.width*self.height,4)
     
     @property
     def perimeter(self) -> float:
-        return (self.width*2)+(self.height*2)
+        return round((self.width*2)+(self.height*2),4)
     
     def square(self) -> bool:
         """Checks if the figure is a square or not."""

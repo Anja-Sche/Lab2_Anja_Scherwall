@@ -39,20 +39,20 @@ class Center:
         self.center = (self.x, self.y)
 
     @property
-    def x(self) -> int:         
+    def x(self) -> int|float:         
         return self._x 
     
     @x.setter
-    def x(self, value: int) -> None:
+    def x(self, value: int|float) -> None:
         utils.validate_type_number(value)
         self._x = value
 
     @property
-    def y(self) -> int: 
+    def y(self) -> int|float: 
         return self._y 
     
     @y.setter
-    def y(self, value: int) -> None:
+    def y(self, value: int|float) -> None:
         utils.validate_type_number(value)        
         self._y = value
 
@@ -109,7 +109,7 @@ class Center:
             return False
         
 
-    def translate(self, x: int, y: int) -> str:
+    def translate(self, x: int|float, y: int|float) -> str:
         """Puts x and y in a tuple."""
         self._x = self._x + x
         self._y = self._y + y
