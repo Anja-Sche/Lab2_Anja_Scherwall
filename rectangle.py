@@ -2,16 +2,41 @@ from center import Center
 import utils
 
 class Rectangle(Center):
+    """
+    A class representing the shape rectangle.
+
+    Attributes:
+    - x (int): The coordinate on the x axel.
+    - y (int): The coordinate on the y axel.
+    - width (int): The width of the rectangle.
+    - height (int): The height of the rectangle.
+
+    Methods:
+    - translate(): Moves the center position by adding to the existing one.
+    - square(): Checks if the figure is a square or not.
+
+    Example usage:
+    >>> rectangle1 = Rectangle(2, 2, 3, 1)
+    >>> rectangle1.square()
+    This is a rectangle, not a square
+    >>> rectangle1.translate(-1, 2)
+    >>> rectangle1
+    Rectangle(x=1, y=4, width=3, height=1)
+    """
+
     def __init__(self, x=0, y=0, width=0, height=0) -> None:
+        """
+        Initializes an new instance of the class Rectangle.
+
+        Parameters:
+        - x (int): The coordinate on the x axel.
+        - y (int): The coordinate on the y axel.
+        - width (int): The width of the rectangle.
+        - height (int): The height of the rectangle.
+        """
         super().__init__(x, y)
         self.width = width
         self.height = height
-
-    def __repr__(self):
-        return f"Rectangle(x={self._x}, y={self._y}, width={self._width}, height={self._height})"
-    
-    def __str__(self):
-        return f"{self.center} represents the centerposition. The rectangles width is {self.width}, the hight is {self.height}"
 
     @property
     def width(self) -> int:
@@ -44,12 +69,21 @@ class Rectangle(Center):
         return (self.width*2)+(self.height*2)
     
     def square(self) -> bool:
+        """Checks if the figure is a square or not."""
         if self.width == self.height:
             return True
         else:
             print("This is a rectangle, not a square")
 
-    def left_corner_position(self):
+    
+    def _left_corner_position(self) -> tuple:
+        """Calculates the left corner of the rectangle. Used when class Shape2dPlotter"""
         x_position = self._x - (self._width/2)
         y_position = self._y - (self._height/2)
         return (x_position, y_position)
+    
+    def __repr__(self) ->str:
+        return f"Rectangle(x={self._x}, y={self._y}, width={self._width}, height={self._height})"
+    
+    def __str__(self) ->str:
+        return f"{self.center} represents the centerposition. The rectangles width is {self.width}, the hight is {self.height}"
