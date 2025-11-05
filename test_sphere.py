@@ -1,5 +1,6 @@
 from pytest import raises
 from sphere import Sphere
+from cube import Cube
 
 def test_valid_init():
     s = Sphere(1,1,2,3)
@@ -33,6 +34,68 @@ def test_circumference_valid():
 def test_area_valid():
     s = Sphere(1,1,2,4)
     assert s.area == 201.0619
+
+def test_translate_valid():
+    s = Sphere(1,2,3,4)
+    s.translate(1,2,3)
+    assert s.x == 2 and s.y == 4 and s.z == 6 and s.radius == 4
+
+def test_equal_valid():
+    s1 = Sphere(1,1,2,4)
+    s2 = Sphere(2,1,3,4)
+    assert (s1==s2) == True
+
+def test_not_equal():
+    s1 = Sphere(1,1,2,4)
+    s2 = Sphere(2,1,3,2)
+    assert (s1==s2) == False
+
+def test_not_equal_different_shape():
+    s = Sphere(1,1,2,4)
+    c = Cube(1,1,2,4)
+    assert (s==c) == False
+
+def test_larger_than_valid():
+    s1 = Sphere(1,1,2,4)
+    s2 = Sphere(2,1,3,2)
+    assert (s1>s2) == True
+
+def test_larger_than_false():
+    s1 = Sphere(1,1,2,4)
+    s2 = Sphere(2,1,3,2)
+    assert (s2>s1) == False
+
+def test_larger_than_equal_valid():
+    s1 = Sphere(1,1,2,4)
+    s2 = Sphere(2,1,3,2)
+    s3 = Sphere(3,1,4,2)
+    assert (s1>=s2) == True and (s1>=s3) == True
+
+def test_larger_than_equal_false():
+    s1 = Sphere(1,1,2,4)
+    s2 = Sphere(2,1,3,2)
+    assert (s2>=s1) == False
+
+def test_lesser_than_valid():
+    s1 = Sphere(1,1,2,2)
+    s2 = Sphere(2,1,3,4)
+    assert (s1<s2) == True    
+
+def test_lesser_than_false():
+    s1 = Sphere(1,1,2,2)
+    s2 = Sphere(2,1,3,4)
+    assert (s2<s1) == False
+
+def test_lesser_than_equal_valid():
+    s1 = Sphere(1,1,1,3)
+    s2 = Sphere(2,1,2,4)
+    s3 = Sphere(3,1,3,3)
+    assert (s1<=s2) == True and (s1<=s3) == True
+
+def test_lesser_than_equal_false():
+    s1 = Sphere(1,1,2,2)
+    s2 = Sphere(2,1,3,4)
+    assert (s2<=s1) == False
 
 def test_dunder_repr():
     s = Sphere(1,1,1,4)

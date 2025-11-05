@@ -66,7 +66,7 @@ class Center:
 
         
     def translate(self, x: int|float, y: int|float) -> str:
-        """Puts x and y in a tuple."""
+        """Moves the center position by adding to the existing one."""
         self._x = self._x + x
         self._y = self._y + y
         self._center = (self._x, self._y)

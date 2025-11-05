@@ -8,6 +8,7 @@ class Cube(Center):
     Attributes:
     - x (int): The coordinate on the x axel.
     - y (int): The coordinate on the y axel.
+    - z (int): The coordinate on the y axel.
     - side (int): The side of the cube.
 
     Operators:
@@ -30,6 +31,7 @@ class Cube(Center):
         Parameters:
         - x (int): The coordinate on the x axel.
         - y (int): The coordinate on the y axel.
+        - z (int): The coordinate on the y axel.
         - side (int): The side of the cube.
         """
         self.z = z
@@ -77,6 +79,14 @@ class Cube(Center):
     def area(self) -> float:
         return round((self._side * self._side) * 6,4)
     
+    def translate(self, x: int|float, y: int|float, z: int|float) -> str:
+        """Moves the center position by adding to the existing one."""
+        self._x = self._x + x
+        self._y = self._y + y
+        self._z = self._z + z
+        self._center = (self._x, self._y, self._z)
+        return f"The new center of the shape is {self._center}"
+
     def __repr__(self) ->str:
         return f"Cube(x={self._x}, y={self._y}, z={self._z}, side={self._side})"
     

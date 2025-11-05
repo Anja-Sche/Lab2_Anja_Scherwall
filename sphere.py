@@ -9,6 +9,7 @@ class Sphere(Circle):
     Attributes:
     - x (int): The coordinate on the x axel.
     - y (int): The coordinate on the y axel.
+    - z (int): The coordinate on the y axel.
     - radius (int): The radius of the sphere.
 
     Operators:
@@ -33,6 +34,7 @@ class Sphere(Circle):
         Parameters:
         - x (int): The coordinate on the x axel.
         - y (int): The coordinate on the y axel.
+        - z (int): The coordinate on the y axel.
         - radius (int): The radius of the sphere.
         """
         self.z = z
@@ -67,6 +69,14 @@ class Sphere(Circle):
     @property
     def area(self) -> float:
         return round((self.radius*self.radius)*np.pi*4, 4)
+    
+    def translate(self, x: int|float, y: int|float, z: int|float) -> str:
+        """Moves the center position by adding to the existing one."""
+        self._x = self._x + x
+        self._y = self._y + y
+        self._z = self._z +z
+        self._center = (self._x, self._y, self._z)
+        return f"The new center of the shape is {self._center}"
     
     def __repr__(self) ->str:
         return f"Sphere(x={self._x}, y={self._y}, z={self._z}, radius={self.radius})"
