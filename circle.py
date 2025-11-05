@@ -11,6 +11,9 @@ class Circle(Center):
     - y (int): The coordinate on the y axel.
     - radius (int): The radius of the circle.
 
+    Operators:
+    - operators for comparison: ==, <, <=, >, >= 
+
     Methods:
     - translate(): Moves the center position by adding to the existing one.
     - unit_circle(): Checks if the circle is a unit circle.
@@ -24,7 +27,7 @@ class Circle(Center):
     Circle(x=3, y=4, radius=1)
     """
 
-    def __init__(self, radius: int|float, x= 0, y= 0) -> None:
+    def __init__(self, x:int|float= 0, y:int|float= 0, radius: int|float=1) -> None:
         """
         Initializes an new instance of the class Circle.
 

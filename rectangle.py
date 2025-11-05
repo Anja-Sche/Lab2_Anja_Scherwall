@@ -11,6 +11,9 @@ class Rectangle(Center):
     - width (int): The width of the rectangle.
     - height (int): The height of the rectangle.
 
+    Operators:
+    - operators for comparison: ==, <, <=, >, >= 
+
     Methods:
     - translate(): Moves the center position by adding to the existing one.
     - square(): Checks if the figure is a square or not.
@@ -24,7 +27,7 @@ class Rectangle(Center):
     Rectangle(x=1, y=4, width=3, height=1)
     """
 
-    def __init__(self, width: int|float, height: int|float, x=0, y=0) -> None:
+    def __init__(self, x:int|float=0, y:int|float=0, width: int|float=1, height: int|float=1) -> None:
         """
         Initializes an new instance of the class Rectangle.
 

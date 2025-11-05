@@ -9,6 +9,8 @@ When moving on to part two of the excercise I updated the UML and implemented tw
 
 The last UML is for the implementation of a plot class, Shape2dPlotter. 
 
+![Final UML](UMLs/Lab2_UML3.png)
+
 ## Code
 
 ### Classes

@@ -19,7 +19,7 @@ class Shape2dPlotter:
     >>> plot1.plot()
     """
 
-    def __init__(self, *shapes) -> None:
+    def __init__(self, *shapes: tuple) -> None:
         """
         Initializes an new instance of the class Shape2dPlotter.
 
