@@ -41,4 +41,4 @@ In part two of the excercise we were implementing unit testing. With the impleme
 I later did unit testing on the classes that were already crated to see if any changes had to be made.
 
 ## Video presentation
-[Link to video on Youtube](https://youtu.be/3lZlT4FaWFc)
+[Link to video on Youtube](https://youtu.be/0HZ6_gLaa3U)
