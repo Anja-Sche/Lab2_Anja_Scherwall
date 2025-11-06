@@ -8,7 +8,7 @@ def same_shape(self, other):
     
 
 def validate_different_type(self, other):
-    if not (same_shape(self, other)):    
+    if not (type(self) == type(other)):    
         raise TypeError("You can't compare size of two different shapes.")
     
 

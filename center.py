@@ -75,7 +75,8 @@ class Center:
 
     def __eq__(self, other) -> bool: 
         """Compare if two child-classes are equal. The same type, area and perimeter"""
-        if utils.same_shape(self, other) and self.area == other.area and self.perimeter == other.perimeter:
+        utils.validate_different_type(self, other)
+        if self.area == other.area and self.perimeter == other.perimeter:
             return True
         else:
             return False
