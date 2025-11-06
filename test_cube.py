@@ -53,7 +53,8 @@ def test_not_equal():
 def test_not_equal_different_shape():
     s = Sphere(1,1,2,4)
     c = Cube(1,1,2,4)
-    assert (s==c) == False
+    with raises(TypeError):
+        (s==c)
 
 def test_larger_than_valid():
     c1 = Cube(1,1,2,4)

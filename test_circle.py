@@ -57,7 +57,8 @@ def test_not_equal():
 def test_not_equal_different_shape():
     c = Circle(1,1,4)
     s = Sphere(1,1,2,4)
-    assert (c==s) == False
+    with raises(TypeError):
+        c==s
 
 def test_larger_than_valid():
     c1 = Circle(1,1,4)

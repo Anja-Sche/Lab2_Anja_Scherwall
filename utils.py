@@ -1,12 +1,5 @@
 from numbers import Number
 
-def same_shape(self, other):
-    if type(self) == type(other):
-        return True
-    else:
-        return False
-    
-
 def validate_different_type(self, other):
     if not (type(self) == type(other)):    
         raise TypeError("You can't compare size of two different shapes.")
