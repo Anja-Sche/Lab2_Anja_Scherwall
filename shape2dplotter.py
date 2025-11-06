@@ -49,10 +49,10 @@ class Shape2dPlotter:
             else:
                 return "You can only plot circles and rectangles"
 
-        fig, ax = plt.subplots()
+        fig, ax = plt.subplots(figsize=(9,7))
         plt.axis("equal")       
         
-        ax.set(title="Shapes", xlim=(-8, 10))
+        ax.set(title="Shapes", xlim=(-15, 15))
         ax.set_xlabel(xlabel="x",loc="left") 
         ax.set_ylabel(ylabel="y",loc="top")
         ax.grid()
@@ -72,5 +72,7 @@ class Shape2dPlotter:
         return f"Shape2dPlotter{self._shapes}"
     
     def __str__(self) ->str:
-        return f"These type of shapes will be shown: {tuple(shape.__class__.__name__ for shape in self._shapes)}"
+        shapes_list = "\n".join(repr(shape) for shape in self._shapes)
+        return f"These shapes will be shown: \n{shapes_list}"
+        
     

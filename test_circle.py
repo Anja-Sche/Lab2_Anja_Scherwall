@@ -36,6 +36,14 @@ def test_translate_valid():
     c.translate(1,2)
     assert c.x == 2 and c.y == 4 and c.radius == 3
 
+def test_unit_circle_valid():
+    c = Circle(0,0,1)
+    assert c.unit_circle() == True
+
+def test_unit_circle_false():
+    c = Circle(1,1,1)
+    assert c.unit_circle() == False
+
 def test_equal_valid():
     c1 = Circle(1,1,4)
     c2 = Circle(2,1,4)

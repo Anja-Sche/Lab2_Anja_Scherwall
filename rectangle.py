@@ -76,7 +76,7 @@ class Rectangle(Center):
         if self.width == self.height:
             return True
         else:
-            print("This is a rectangle, not a square")
+            return False
 
     
     def _left_corner_position(self) -> tuple:

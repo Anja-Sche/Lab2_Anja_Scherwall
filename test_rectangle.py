@@ -38,6 +38,18 @@ def test_translate_valid():
     r.translate(1,2)
     assert r.x == 2 and r.y == 4 and r.width == 3 and r.height == 4
 
+def test_square_valid():
+    r = Rectangle(1,2,3,3)
+    assert r.square() == True
+
+def test_square_false():
+    r = Rectangle(1,2,3,2)
+    assert r.square() == False
+
+def test_left_corner_position():
+    r = Rectangle(1,2,4,2)
+    assert r._left_corner_position() == (-1, 1)
+
 def test_equal_valid():
     r1 = Rectangle(1,1,4,2)
     r2 = Rectangle(2,1,2,4)

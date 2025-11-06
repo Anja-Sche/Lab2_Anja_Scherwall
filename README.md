@@ -1,6 +1,6 @@
 # Lab2 - Geometry OOP
 The purpose of this lab is to use object-oriented programming in Python to reuse code and design well-structured programs. Creating classes of different shapes.
-In this process I have discussed the logic of the code overall with Rikard and Felix, without going in to details on the code.
+In this process I have discussed the code overall with Rikard and Felix, things like the logic and our thaughts without going in to details on the code.
 
 ## UML
 [UML's](https://github.com/Anja-Sche/Lab2_Anja_Scherwall/tree/main/UMLs) for this project.
